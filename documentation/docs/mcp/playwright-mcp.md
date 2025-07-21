@@ -15,12 +15,12 @@ This tutorial covers how to add the Playwright MCP Server as a Goose extension, 
 :::tip TLDR
 <Tabs groupId="interface">
   <TabItem value="ui" label="Goose Desktop" default>
-  [Launch the installer](goose://extension?cmd=npx&arg=-y&arg=@playwright/mcp@latest&id=playwright&name=Playwright&description=Modern%20web%20testing%20and%20automation)
+  [Install the Playwright Node package](goose://extension?cmd=npx&arg=-y&arg=@playwright/mcp@latest&id=playwright&name=Playwright&description=Modern%20web%20testing%20and%20automation)
   </TabItem>
   <TabItem value="cli" label="Goose CLI">
   **Command**
   ```sh
-  npx -y @playwright/mcp@latest
+  npm install @playwright/mcp@latest
   ```
   </TabItem>
 </Tabs>
@@ -76,7 +76,7 @@ Note that you'll need [Node.js](https://nodejs.org/) installed on your system to
     │  Command-line Extension 
     │
     ◆  What would you like to call this extension?
-    │  Playwright
+    │  playwright
     └ 
   ```
 
@@ -91,7 +91,7 @@ Note that you'll need [Node.js](https://nodejs.org/) installed on your system to
     │  Command-line Extension 
     │
     ◇  What would you like to call this extension?
-    │  Playwright
+    │  playwright
     │
     ◆  What command should be run?
     │  npx -y @playwright/mcp@latest
@@ -119,7 +119,7 @@ Note that you'll need [Node.js](https://nodejs.org/) installed on your system to
     └ 
   ```
 
-  6. Choose to add a description. If you select "Yes" here, you will be prompted to enter a description for the extension.
+  6. Add a description.
   ```sh
     ┌   goose-configure 
     │
@@ -139,9 +139,35 @@ Note that you'll need [Node.js](https://nodejs.org/) installed on your system to
     │  300
     │
     ◆  Would you like to add a description?
-    │  No
+    │  Yes
     └ 
   ```
+  ```sh
+    ┌   goose-configure 
+    │
+    ◇  What would you like to configure?
+    │  Add Extension (Connect to a new extension) 
+    │
+    ◇  What type of extension would you like to add?
+    │  Command-line Extension 
+    │
+    ◇  What would you like to call this extension?
+    │  Playwright
+    │
+    ◇  What command should be run?
+    │  npx -y @playwright/mcp@latest
+    │
+    ◇  Please set the timeout for this tool (in secs):
+    │  300
+    │
+    ◆  Would you like to add a description?
+    │  Yes
+    │
+    ◇  Enter a description for this extension:
+    │  Modern web testing and automation
+    └ 
+  ```
+
 
   7. Choose No when asked to add environment variables
   ```sh
@@ -162,8 +188,11 @@ Note that you'll need [Node.js](https://nodejs.org/) installed on your system to
     ◇  Please set the timeout for this tool (in secs):
     │  300
     │
-    ◇  Would you like to add a description?
-    │  No
+    ◆  Would you like to add a description?
+    │  Yes
+    │
+    ◇  Enter a description for this extension:
+    │  Modern web testing and automation
     │
     ◆  Would you like to add environment variables?
     │  No 
